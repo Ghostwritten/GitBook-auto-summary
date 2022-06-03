@@ -7,7 +7,7 @@ import argparse
 import os
 import re
 
-teshu_list = ['_book', 'node_modules', 'img']
+ignore_list = ['_book', 'node_modules', 'img']
 
 def output_markdown(dire, base_dir, output_file, append, iter_depth=0):
     """Main iterator for get information from every file/folder
@@ -19,7 +19,7 @@ def output_markdown(dire, base_dir, output_file, append, iter_depth=0):
     """
     top_list = os.listdir(dire)
     for i in top_list:
-       if i in teshu_list:
+       if i in ignore_list:
           top_list.remove(i)
 
     for filename in sort_dir_file(top_list, base_dir): 
