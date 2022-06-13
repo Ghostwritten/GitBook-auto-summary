@@ -1,7 +1,7 @@
 # GitBook-auto-summary
 Automatically update SUMMARY.md of a GitBook repo，default Based on the markdown title, not the article name，But if without a title, article name is used instead
 
-@[toc]
+
 ##  1. 背景
 
 我们了解 gitbook plugin summary 自动生成 summary.md 文件内容
