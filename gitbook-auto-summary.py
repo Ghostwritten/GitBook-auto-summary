@@ -106,6 +106,8 @@ def sort_dir_file(listdir, dire):
             list_of_file.append(filename)
     for dire in list_of_dir:
         list_of_file.append(dire)
+
+    list_of_file=sorted(list_of_file,key=lambda x: list(map(int, re.findall(r'\d+', x))))
     return list_of_file  
 
 def write_md_filename(dire, base_dir,filename, append):
