@@ -293,8 +293,59 @@ $ cat SUMMARY.md
 ```
 这也是最初`book sm`命令结果的样子。
 
----
-参考链接：
+### 4.8  文章排序
+这是超过10数量的文章。
+```bash
+$  ls Docker-Swarm/
+docker_swarm_10_maintenance_mode.md  docker_swarm_6_healthcheck.md
+docker_swarm_1_start.md              docker_swarm_7_update.md
+docker_swarm_2_network.md            docker_swarm_8_UI_Portainer.md
+docker_swarm_3_load_balancing.md     docker_swarm_9_docker-compose_deploy_app.md
+docker_swarm_4_encrypted_network.md  README.md
+docker_swarm_5_secrets.md            SUMMARY.md
+```
+
+book sm执行的效果是这样，`docker_swarm_10_maintenance_mode.md`并没有按照正常的顺序排在`docker_swarm_9_docker-compose_deploy_app.md`的后面。
+
+```bash
+- [Docker Swarm](Docker-Swarm/README.md)
+  * [Docker Swarm 1 Start](Docker-Swarm/docker_swarm_1_start.md)
+  * [Docker Swarm 10 Maintenance Mode](Docker-Swarm/docker_swarm_10_maintenance_mode.md)
+  * [Docker Swarm 2 Network](Docker-Swarm/docker_swarm_2_network.md)
+  * [Docker Swarm 3 Load Balancing](Docker-Swarm/docker_swarm_3_load_balancing.md)
+  * [Docker Swarm 4 Encrypted Network](Docker-Swarm/docker_swarm_4_encrypted_network.md)
+  * [Docker Swarm 5 Secrets](Docker-Swarm/docker_swarm_5_secrets.md)
+  * [Docker Swarm 6 Healthcheck](Docker-Swarm/docker_swarm_6_healthcheck.md)
+  * [Docker Swarm 7 Update](Docker-Swarm/docker_swarm_7_update.md)
+  * [Docker Swarm 8 UI Portainer](Docker-Swarm/docker_swarm_8_UI_Portainer.md)
+  * [Docker Swarm 9 Docker Compose Deploy App](Docker-Swarm/docker_swarm_9_docker-compose_deploy_app.md)
+```
+那看我的。`docker_swarm_10_maintenance_mode.md`按照正常的顺序排在`docker_swarm_9_docker-compose_deploy_app.md`的后面。
+
+```bash
+$ python3 gitbook-auto-summary.py .
+$ cat SUMMARY-GitBook-auto-summary.md
+# Summary
+
+* [summary](./Overview.md)
+* [序言](./README.md)
+- Docker-Swarm
+  * [docker swarm 介绍](Docker-Swarm/README.md)
+  * [docker swarm 快速入门](Docker-Swarm/docker_swarm_1_start.md)
+  * [docker swarm 网络](Docker-Swarm/docker_swarm_2_network.md)
+  * [docker swam 集群实现负载均衡](Docker-Swarm/docker_swarm_3_load_balancing.md)
+  * [docker swarm 创建加密覆盖网络](Docker-Swarm/docker_swarm_4_encrypted_network.md)
+  * [docker swarm 管理 secrets](Docker-Swarm/docker_swarm_5_secrets.md)
+  * [docker swarm 健康检查](Docker-Swarm/docker_swarm_6_healthcheck.md)
+  * [dcoker swarm 更新](Docker-Swarm/docker_swarm_7_update.md)
+  * [docker swarm 部署界面 ui portainer](Docker-Swarm/docker_swarm_8_UI_Portainer.md)
+  * [docker swarm 通过 docker compose 部署应用](Docker-Swarm/docker_swarm_9_docker-compose_deploy_app.md)
+  * [docker swarm 维护模式](Docker-Swarm/docker_swarm_10_maintenance_mode.md)
+```
+
+
+
+参考：
 
  - [mofhu/GitBook-auto-summary](http://frank-the-obscure.me/GitBook-auto-summary/)
 
